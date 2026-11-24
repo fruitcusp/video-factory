@@ -1,9 +1,7 @@
 name: render-demo
 
-
 on:
   workflow_dispatch:
-
 
 jobs:
   render:
@@ -12,29 +10,28 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
 
-
       - name: Install full video stack
         run: npm install --legacy-peer-deps --no-audit --no-fund
-
 
       - name: Show installed stack
         run: npm ls --depth=0 || true
 
-
       - name: Render demo video with Remotion
         run: npx remotion render src/index.ts Demo out/demo.mp4
 
+      - name: Install ffmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
 
       - name: Verify output
         run: |
           ls -la out/
           ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_name,width,height out/demo.mp4
-
 
       - name: Upload rendered video
         uses: actions/upload-artifact@v4
