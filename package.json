@@ -1,0 +1,29 @@
+{
+  "name": "video-factory",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Kho video A-Z chay tren GitHub Actions: Remotion + GSAP + Three.js + FFmpeg",
+  "scripts": {
+    "render": "remotion render src/index.ts Demo out/demo.mp4"
+  },
+  "dependencies": {
+    "@lottiefiles/dotlottie-react": "^0.13.0",
+    "@react-three/drei": "^10.0.0",
+    "@react-three/fiber": "^9.0.0",
+    "@react-three/postprocessing": "^3.0.0",
+    "@react-three/rapier": "^2.0.0",
+    "@remotion/cli": "^4.0.0",
+    "@rive-app/react-canvas": "^4.0.0",
+    "animejs": "^3.2.0",
+    "gsap": "^3.12.0",
+    "howler": "^2.2.0",
+    "mediabunny": "^1.0.0",
+    "motion": "^12.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remotion": "^4.0.0",
+    "satori": "^0.12.0",
+    "svgo": "^3.0.0",
+    "three": "^0.170.0"
+  }
+}
