@@ -44,7 +44,7 @@ const VisualVeTay: React.FC<VisualProps> = ({local, scene}) => {
     <svg width="560" height="560" viewBox="0 0 560 560">
       <circle cx="280" cy="230" r={r} fill="none" stroke="#2456c8" strokeWidth="7" strokeLinecap="round" />
       <path d={`M 190 400 Q 280 ${400 - 60 * draw} 370 400`} fill="none" stroke="#e2543e" strokeWidth="7" strokeLinecap="round" />
-      <text x="280" y="245" textAnchor="middle" fontFamily={FONT} fontSize="44" fontWeight="800" fill="#20304a">
+      <text x="280" y="243" textAnchor="middle" fontFamily={FONT} fontSize="36" fontWeight="800" fill="#20304a">
         {scene % 2 === 0 ? '1 · 2 · 3' : 'Mỗi ngày'}
       </text>
       <path d="M120 480 h320" stroke="#20304a" strokeWidth="5" strokeLinecap="round" strokeDasharray="14 12" />
