@@ -1,5 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {VisualGsap, VisualAnime, VisualSpring, VisualPixi, VisualP5, VisualMatter, VisualD3, VisualThree} from './Engines';
 
 // Dong co "Video bang code" cua TuTaLab: 1 bo khuon, 8 phong cach tu
 // catalog 79 ban nha. Moi phong cach: tieu de o dai tren, phu de loi
@@ -15,7 +16,15 @@ export type CodeVidStyleId =
   | 'doanh-nghiep'
   | 'pixel'
   | 'bieu-do'
-  | 'neon';
+  | 'neon'
+  | 'gsap'
+  | 'anime'
+  | 'spring'
+  | 'pixi'
+  | 'p5'
+  | 'matter'
+  | 'd3'
+  | 'three';
 
 export const CODEVID_SAMPLE_SCENES: [string, string] = [
   'Ba bước để nhớ lâu hơn',
@@ -31,6 +40,14 @@ export const CODEVID_STYLES: Record<CodeVidStyleId, {name: string}> = {
   pixel: {name: 'Pixel 8-bit'},
   'bieu-do': {name: 'Biểu đồ sống'},
   neon: {name: 'Neon tương lai'},
+  gsap: {name: 'Chuyển động GSAP'},
+  anime: {name: 'Hoạt hình Anime.js'},
+  spring: {name: 'Lò xo React Spring'},
+  pixi: {name: 'Hạt sáng PixiJS'},
+  p5: {name: 'Vẽ sáng tạo p5.js'},
+  matter: {name: 'Vật lý Matter.js'},
+  d3: {name: 'Dữ liệu D3'},
+  three: {name: 'Không gian 3D Three.js'},
 };
 
 export const FONT = 'DejaVu Sans, sans-serif';
@@ -177,6 +194,14 @@ export const CODEVID_THEMES: Record<
   pixel: {bg: '#141433', titleFg: '#ffd94d', capFg: '#141433', capBg: '#ffd94d', Visual: VisualPixel},
   'bieu-do': {bg: '#0b1026', titleFg: '#ffffff', capFg: '#ffffff', capBg: '#1b2745', Visual: VisualBieuDo},
   neon: {bg: '#070b24', titleFg: '#22d3ee', capFg: '#ffffff', capBg: '#131a3a', Visual: VisualNeon},
+  gsap: {bg: '#0d1526', titleFg: '#8be04e', capFg: '#ffffff', capBg: '#16233c', Visual: VisualGsap},
+  anime: {bg: '#160f2a', titleFg: '#ffab5e', capFg: '#ffffff', capBg: '#241847', Visual: VisualAnime},
+  spring: {bg: '#0f172a', titleFg: '#e879f9', capFg: '#ffffff', capBg: '#1e293b', Visual: VisualSpring},
+  pixi: {bg: '#0a0a1f', titleFg: '#ffd94d', capFg: '#ffffff', capBg: '#171736', Visual: VisualPixi},
+  p5: {bg: '#101820', titleFg: '#7dd3fc', capFg: '#ffffff', capBg: '#1c2836', Visual: VisualP5},
+  matter: {bg: '#111827', titleFg: '#ffd94d', capFg: '#ffffff', capBg: '#1f2937', Visual: VisualMatter},
+  d3: {bg: '#0b1026', titleFg: '#7dd3fc', capFg: '#ffffff', capBg: '#1b2745', Visual: VisualD3},
+  three: {bg: '#0b0f1a', titleFg: '#93c5fd', capFg: '#ffffff', capBg: '#16203a', Visual: VisualThree},
 };
 
 export const resolveStyle = (styleId?: string): CodeVidStyleId =>
